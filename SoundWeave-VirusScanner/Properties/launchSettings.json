@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "SoundWeave_VirusScanner": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7185",
+      "launchBrowser": false
+    }
+  }
+}

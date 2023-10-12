@@ -8,9 +8,9 @@ namespace SoundWeave_VirusScanner.Prod
 {
     public class Podcasts
     {
-        static readonly string serverName = "localhost";
-        static readonly int serverPort = 3310;
-        
+        static readonly string serverName = "soundweave-virus-scanner.aycacnggaxc5d0en.northeurope.azurecontainer.io";
+        static readonly int serverPort = 80;
+
         [FunctionName("ScanPodcasts")]
         public void ScanPodcasts([BlobTrigger("podcasts/{name}", Connection = "StorageAccountConnection")] Stream myBlob, string name, ILogger log)
         {

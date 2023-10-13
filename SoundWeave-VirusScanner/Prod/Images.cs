@@ -8,8 +8,8 @@ namespace SoundWeave_VirusScanner.Prod
 {
     public class Images
     {
-        static readonly string serverName = "20.107.136.86";
-        static readonly int serverPort = 80;
+        static readonly string serverName = "4.207.105.166";
+        static readonly int serverPort = 3310;
 
         [FunctionName("ScanImages")]
         public void ScanImages([BlobTrigger("images/{name}", Connection = "StorageAccountConnection")] Stream myBlob, string name, ILogger log)

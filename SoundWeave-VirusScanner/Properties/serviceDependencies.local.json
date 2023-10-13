@@ -3,10 +3,6 @@
     "appInsights1": {
       "type": "appInsights.sdk"
     },
-    "storage1": {
-      "type": "storage.emulator",
-      "connectionId": "AzureWebJobsStorage"
-    },
     "secrets1": {
       "type": "secrets.user"
     },
@@ -16,6 +12,12 @@
       "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Storage/storageAccounts/soundweavestorage",
       "type": "storage.azure",
       "connectionId": "StorageAccountConnection"
+    },
+    "storage1": {
+      "secretStore": "LocalSecretsFile",
+      "type": "storage.emulator",
+      "connectionId": "Azurite",
+      "dynamicId": null
     }
   }
 }

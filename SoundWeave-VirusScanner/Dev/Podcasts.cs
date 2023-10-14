@@ -14,7 +14,7 @@ namespace SoundWeave_VirusScanner.Dev
         [FunctionName("ScanPodcastsDEVELOPMENT")]
         public void ScanPodcastsDEVELOPMENT([BlobTrigger("podcasts/{name}")] Stream myBlob, string name, ILogger log)
         {
-            log.LogInformation($"C# Blob trigger function Processed blob\n Name:{name} \n Size: {myBlob.Length} Bytes");
+            log.LogInformation($"Blob trigger function Processed blob\n Name:{name} \n Size: {myBlob.Length} Bytes");
 
             ClamClient clam = new(serverName, serverPort);
 

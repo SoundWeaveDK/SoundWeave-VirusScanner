@@ -16,14 +16,14 @@ namespace SoundWeave_VirusScanner.Dev
         [FunctionName("ScanImagesDEVELOPMENT")]
         public void ScanImagesDEVELOPMENT([BlobTrigger("images/{name}")] Stream myBlob, string name, ILogger log)
         {
-            log.LogInformation($"C# Blob trigger function Processed blob\n Name:{name} \n Size: {myBlob.Length} Bytes");
+            log.LogInformation($"Blob trigger function Processed blob\n Name:{name} \n Size: {myBlob.Length} Bytes");
 
             ClamClient clam = new(serverName, serverPort);
 
             ClamScanResult scanResult = clam.SendAndScanFileAsync(myBlob).Result;
 
             BlobServiceClient blobServiceClient = new(Environment.GetEnvironmentVariable("AzureWebJobsStorage"));
-            BlobContainerClient blobContainerClient = blobServiceClient.GetBlobContainerClient("podcasts");
+            BlobContainerClient blobContainerClient = blobServiceClient.GetBlobContainerClient("images");
             BlobClient blobClient = blobContainerClient.GetBlobClient(name);
 
             switch (scanResult.Result)

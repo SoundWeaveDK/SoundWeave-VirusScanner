@@ -6,17 +6,18 @@
     "secrets1": {
       "type": "secrets.user"
     },
+    "storage1": {
+      "secretStore": "LocalSecretsFile",
+      "type": "storage.emulator",
+      "connectionId": "Azurite",
+      "dynamicId": null
+    },
     "storage2": {
       "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ServiceLinker/locations/northeurope/connectors/StorageAccountConnection_5F6698A907",
       "secretStore": "LocalSecretsFile",
       "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Storage/storageAccounts/soundweavestorage",
       "type": "storage.azure",
-      "connectionId": "StorageAccountConnection"
-    },
-    "storage1": {
-      "secretStore": "LocalSecretsFile",
-      "type": "storage.emulator",
-      "connectionId": "Azurite",
+      "connectionId": "StorageAccountConnection",
       "dynamicId": null
     }
   }
